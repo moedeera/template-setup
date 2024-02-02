@@ -18,26 +18,27 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
-a:hover {
-  color: #535bf2;
+a:hover,
+.form-btn:hover {
+  color: white;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin-bottom: 10px;
 }
 
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid grey;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -54,6 +55,36 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid grey;
+  width: 95%;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 10px;
+}
+
+.selected {
+  border-bottom: 1px solid blue;
+}
+.footer {
+  border-top: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
