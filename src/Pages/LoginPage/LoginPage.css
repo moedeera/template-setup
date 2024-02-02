@@ -1,0 +1,72 @@
+.login-form {
+  border: 1px solid grey;
+  color: rgb(61, 59, 59);
+  width: 95%;
+  max-width: 600px;
+  padding: 30px 10px;
+}
+.login-form-input {
+  width: 90%;
+  max-width: 30rem;
+  padding: 15px 12.5px;
+  border: 1px solid rgba(128, 128, 128, 0.75);
+  border-radius: 3px;
+}
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+.form-error {
+  color: crimson;
+  letter-spacing: 1px;
+}
+.form-text-input-container {
+  width: 100%;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+}
+.form-text-input-container img {
+  cursor: pointer;
+}
+.form-btn {
+  background: rgb(127, 124, 252);
+  background: linear-gradient(
+    90deg,
+    rgba(127, 124, 252, 1) 0%,
+    rgba(88, 124, 252, 1) 35%,
+    rgba(88, 124, 252, 1) 100%
+  );
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: 90%;
+  max-width: 30rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.form-input-container {
+  display: flex;
+  gap: 10px;
+  margin: 7.5px 0;
+}
+
+.form-header {
+  text-align: center;
+}
+
+.alt {
+  background: transparent;
+  color: rgba(88, 124, 252, 1);
+}
+input:focus-visible {
+  border: none;
+}
