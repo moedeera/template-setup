@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 import { emailValidator } from "./ValidateEmail";
 import { loginUser } from "../../Context/APcalls/localStorage";
+import { sometimesReturnValue } from "../../Context/FetchFunction/FetchFunction";
 
 export const LoginPage = () => {
   const [userInfo, setUserInfo] = useState({ email: "", password: "" });
@@ -18,23 +19,19 @@ export const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let valid = emailValidator(userInfo.email);
 
-    if (!valid) {
-      setEmailError(true);
-      return;
-    }
-
-    setEmailError(false);
     // Redirect to profile page if no error
+
+    const serverResponse = await loginUser(userInfo.email, userInfo.password);
+
     try {
-      const token = await loginUser(userInfo.email, userInfo.password);
-      console.log(token);
+      const response = await sometimesReturnValue(serverResponse);
+      console.log(response);
+      localStorage.setItem("token", JSON.stringify(response));
+      navigate("/account");
     } catch (error) {
       console.log(error);
     }
-
-    // navigate("/account");
   };
   return (
     <div className="container">
