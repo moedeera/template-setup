@@ -24,7 +24,7 @@ const loginUser = async (email, password) => {
     }
 
     // Simulate successful login with delay and possible error
-    return await sometimesReturnValue(matchingUser.token);
+    return matchingUser.token;
   } catch (error) {
     console.error("Error:", error.message);
     return "Database Error";
