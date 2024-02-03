@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./LoginPage.css";
-import { emailValidator } from "./ValidateEmail";
+
 import { loginUser } from "../../Context/APcalls/localStorage";
 import { sometimesReturnValue } from "../../Context/FetchFunction/FetchFunction";
 import { Loading } from "../../Components/Loading/Loading";

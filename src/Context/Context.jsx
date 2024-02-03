@@ -1,4 +1,4 @@
-import { createContext, useEffect } from "react";
+import { createContext, useEffect, useState } from "react";
 import { sometimesReturnValue } from "./FetchFunction/FetchFunction";
 // Naming the context with PascalCase
 export const SiteContext = createContext({});
@@ -40,8 +40,33 @@ const generateUserData = () => {
   }
 };
 
+const fetchCurrentPage = () => {
+  try {
+    let data = localStorage.getItem("current-page");
+    return JSON.parse(data) || "Home";
+  } catch (error) {
+    console.error("Error parsing current page from localStorage:", error);
+    return "Home";
+  }
+};
+
+const searchForToken = () => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 // eslint-disable-next-line react/prop-types
 export const SiteContextProvider = ({ children }) => {
+  const fetchedToken = searchForToken();
+  const fetchedCurrentPage = fetchCurrentPage();
+
+  const [currentPage, setCurrentPage] = useState(fetchedCurrentPage);
+  const [logState, setLogState] = useState(fetchedToken);
+
   useEffect(() => {
     generateUserData();
   }, []);
@@ -50,6 +75,10 @@ export const SiteContextProvider = ({ children }) => {
     <SiteContext.Provider
       value={{
         sometimesReturnValue,
+        logState,
+        setLogState,
+        currentPage,
+        setCurrentPage,
       }}
     >
       {children}

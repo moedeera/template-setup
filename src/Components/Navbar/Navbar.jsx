@@ -10,6 +10,7 @@ export const Navbar = () => {
     { id: 1, name: "Home", to: "/" },
     { id: 2, name: "Profile", to: "/profile" },
     { id: 3, name: "Posts", to: "/posts/all" },
+    { id: 4, name: "Redirect", to: "/redirect/none" },
   ];
 
   return (
@@ -33,7 +34,7 @@ export const Navbar = () => {
         <button
           className="btn"
           onClick={() => {
-            localStorage.removeItem("user");
+            localStorage.removeItem("token");
             setLogState(false);
           }}
         >
