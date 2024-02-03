@@ -26,6 +26,7 @@ export const LoginPage = () => {
 
     try {
       const response = await sometimesReturnValue(serverResponse);
+      localStorage.setItem("token", JSON.stringify());
       console.log(response);
     } catch (error) {
       console.log(error);
