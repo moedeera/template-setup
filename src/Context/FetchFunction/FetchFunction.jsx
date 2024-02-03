@@ -4,18 +4,18 @@ function sometimesReturnValue(value) {
     if (Math.random() < 0.5) {
       setTimeout(() => {
         // After delay, decide to return value or error
-        if (Math.random() < 0.5) {
+        if (Math.random() < 0.75) {
           resolve(value);
         } else {
-          reject(new Error("Function did not return a value."));
+          reject(new Error("Error in Database. Please try again later."));
         }
       }, 1000); // Delay by 1 second
     } else {
       // Without delay, decide to return value or error
-      if (Math.random() < 0.5) {
+      if (Math.random() < 0.75) {
         resolve(value);
       } else {
-        reject(new Error("Function did not return a value."));
+        reject(new Error("Error in Database. Please try again later"));
       }
     }
   });
