@@ -26,7 +26,11 @@ export const SiteContextProvider = ({ children }) => {
     // Correctly stringify currentPage when setting it in localStorage
     localStorage.setItem("current-page", JSON.stringify(currentPage));
   }, [currentPage]);
-
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      localStorage.setItem("token", JSON.stringify(logState));
+    }
+  }, [logState]);
   return (
     <SiteContext.Provider
       value={{
