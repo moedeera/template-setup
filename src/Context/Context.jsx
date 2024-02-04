@@ -27,10 +27,18 @@ export const SiteContextProvider = ({ children }) => {
     localStorage.setItem("current-page", JSON.stringify(currentPage));
   }, [currentPage]);
   useEffect(() => {
-    if (localStorage.getItem("token")) {
-      localStorage.setItem("token", JSON.stringify(logState));
+    // This effect could be adjusted or removed based on your actual needs.
+    if (logState) {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        setLogState(false);
+        // Logic to set token if logState is true but no token is found (optional)
+      }
+    } else {
+      localStorage.removeItem("token");
     }
   }, [logState]);
+
   return (
     <SiteContext.Provider
       value={{

@@ -12,6 +12,7 @@ export const Navbar = () => {
     { id: 3, name: "Posts", to: "/posts/all" },
     // { id: 4, name: "Redirect", to: "/redirect/none" },
   ];
+  console.log(logState);
 
   return (
     <div className="navbar">

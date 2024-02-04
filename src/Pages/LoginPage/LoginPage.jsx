@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 
 import { loginUser } from "../../Context/APcalls/localStorage";
 import { sometimesReturnValue } from "../../Context/FetchFunction/FetchFunction";
 import { Loading } from "../../Components/Loading/Loading";
+import { SiteContext } from "../../Context/Context";
 
 export const LoginPage = () => {
+  const { logState, setLogState } = useContext(SiteContext);
   const [userInfo, setUserInfo] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -44,6 +46,7 @@ export const LoginPage = () => {
       console.log("it continued");
       const response = await sometimesReturnValue(serverResponse);
       localStorage.setItem("token", JSON.stringify(serverResponse));
+      setLogState(serverResponse);
       console.log(response);
       setError("");
       navigate("/profile");
