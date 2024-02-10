@@ -3,7 +3,9 @@
   color: rgb(61, 59, 59);
   width: 95%;
   max-width: 600px;
-  padding: 30px 10px;
+  text-align: left;
+  padding: 30px 20px;
+  border-radius: 10px;
 }
 .login-form-input {
   width: 90%;
@@ -17,6 +19,10 @@
   flex-direction: column;
   gap: 5px;
   margin-top: 10px;
+}
+.form-section label {
+  display: flex;
+  gap: 20px;
 }
 .form-error {
   color: crimson;
