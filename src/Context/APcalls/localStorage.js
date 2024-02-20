@@ -1,5 +1,3 @@
-import { sometimesReturnValue } from "../FetchFunction/FetchFunction.jsx";
-
 let userData = [
   { id: 1, name: "John Smith", token: 112233 },
   { id: 2, name: "Kevin Jones", token: 223344 },
