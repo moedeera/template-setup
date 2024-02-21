@@ -8,6 +8,7 @@ import { Footer } from "./Components/Footer/Footer";
 import { PostsPage } from "./Pages/PostsPage/PostsPage";
 import { SiteContextProvider } from "./Context/Context";
 import { ReDirectPage } from "./Pages/ReDirectPage/ReDirectPage";
+import { Login } from "./Pages/Login/Login";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/log" element={<Login />} />
           <Route path="/redirect/:from" element={<ReDirectPage />} />
           <Route path="/posts/:id" element={<PostsPage />} />
         </Routes>
